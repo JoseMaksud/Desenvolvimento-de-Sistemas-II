@@ -1,0 +1,45 @@
+using System;
+
+
+public class Sorteio
+{
+    public static void Main(string[] args)
+    {
+        var numeroSorteado = new System.Random().Next(0, 10); // Número sorteado
+        
+        Console.WriteLine("COLINHA: " + numeroSorteado); // Cólinha
+        
+        int i = 3; // Número de tentativas
+        
+        while (true) {
+            Console.WriteLine("Numero de tentativas: " + i); // Printa o número de tentativas
+            
+            string userInput = Console.ReadLine(); // Lê o que o usuário digitou
+            int userInputInt; // Inicializar váriavel
+            try {
+                userInputInt = Int32.Parse(userInput); // Definir o valor dela como inteiro
+            } catch(Exception e) {  // Caso de erro na conversão de string para inteiro, ira printar e voltar para o inicio do loop
+                Console.WriteLine("Digite um valor valido!");
+                continue;
+            }
+            
+            
+            if (userInputInt < 0 || userInputInt > 10) { // Válida se o valor esta entre 0 e 10
+                Console.WriteLine("Digite um numero entre 0 e 10.");
+                continue;
+            }
+            if (numeroSorteado == userInputInt) { // Válida se o usuário acertou
+                Console.WriteLine("Parabens, voce acertou!!");
+                break;
+            } 
+            else if (numeroSorteado != userInputInt) { // Caso erre, diminui de tentativas e caso acabe as tentativas, exibe outra mensagem saindo do programa
+                i--;
+                if (i == 0) {
+                     Console.WriteLine("Nao foi dessa vez!");
+                     break;
+                }
+                Console.WriteLine("Errou tente novamente.");
+            }
+        }
+    }
+}
