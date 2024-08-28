@@ -7,10 +7,10 @@ public class Program
     {
         // Software de validação de senha
         Console.WriteLine("Digite uma senha:");
-        String senha = ValidarSenha(Console.ReadLine());
+        string senha = ValidarSenha(Console.ReadLine());
 
         Console.WriteLine("\nConfirme a senha:");
-        String confirmaSenha = ValidarSenha(Console.ReadLine());
+        string confirmaSenha = ValidarSenha(Console.ReadLine());
 
         bool igual = ComparaTexto(senha, confirmaSenha);
 
