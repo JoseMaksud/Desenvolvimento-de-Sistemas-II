@@ -6,7 +6,7 @@ public class Program
     public static void Main(string[] args)
     {
         // Software de validação de senha
-        Console.Write("Digite uma senha:");
+        Console.WriteLine("Digite uma senha:");
         string senha = ValidarSenha(Console.ReadLine());
 
         Console.WriteLine("\nConfirme a senha:");
